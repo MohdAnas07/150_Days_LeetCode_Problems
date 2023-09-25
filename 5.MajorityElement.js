@@ -1,18 +1,17 @@
 var majorityElement = function (nums) {
-    let disc = {}
-    for (let i = 0; i < nums.length; i++) {
-        if (disc[nums[i]] > 0) {
-            disc[nums[i]] += 1;
-        } else {
-            disc[nums[i]] = 1
+    let map = {}
+    for (let num of nums) {
+        if (!map[num]) {
+            map[num] = 0
         }
+        map[num]++;
     }
 
     let max = -1;
     let majEle = -1
-    for (let key in disc) {
-        if (+disc[key] > max) {
-            max = +disc[key]
+    for (let key in map) {
+        if (+map[key] > max) {
+            max = +map[key]
             majEle = +key
         }
     }
