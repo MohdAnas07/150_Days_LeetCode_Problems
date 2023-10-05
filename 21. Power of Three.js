@@ -1,4 +1,4 @@
-
-let x = 27;
-let base = 3
-console.log(Math.log(x) / Math.log(base));
+var isPowerOfThree = function (n) {
+    let a = Math.log(n) / Math.log(3)
+    return Math.abs(a - Math.round(a)) < 1e-10;
+};
